@@ -6,26 +6,27 @@ This repository contains the source code, datasets, and documentation for implem
 
 ## Repository Structure
 
-```text
-├── data/ # Processed input data for Folsom Lake
-│ ├── CNRFC_daily_ensemble/ # folder of CSV files of daily-released ensemble forecasts (converted into daily values) retrieved from California Nevada River Forecast Center (CNRFC)
-│ ├── Folsom_observed_operations.csv/ # Observed inflow, release, storage, and PDSI time series for WYs 1990-2024 
-│ ├── Box_Cox_trans_lambda.csv/ # Calibrated lambda value applied in the Box-Cox transformation (required in implementing BMA model)
-│ ├── BMA_paras_7day_horizon.csv/ # Calibrated BMA model parameters (based on WYs 2015-2019) for the forecast horizon of 7 days (calibrated using R package 'ensembleBMA' externally)
-│ ├── EFO_risk_tolerance_curve.csv/ # risk-tolerance curve (specific risk tolerance levels for each day within 15 days) for EFO implemtation
-│ └── Modified_rule_curve.csv/ # modified storage regulation curve associated with the experiment settings (only used in multi-year operation simulations)
-│
-├── utils/ # Source code for model components
-│ ├── bma_module.py # Bayesian Model Averaging implementation
-│ ├── dflwl_model.py # dFLWL model for optimal hedging rules
-│ ├── efo_module.py # EFO model for risk tolerance-based flood control release
-│ └── gdrom_folsom.py # pre-trained GDROM rules for Folsom Lake
-│
-├── dFLWL-EFO_demo_flood_season.ipynb/ # Walk-through example for model setting and dFLWL-EFO implementation for flood season operations (e.g., WY 2017)
-├── multi-year_simulation_demo.ipynb/ # Multi-year simulation demo for WYs 2016–2019 using dFLWL-EFO + GDROM
-│
-├── README.md # Project description and setup guide
-└── LICENSE # License file 
+### data 
+Processed input data for Folsom Lake:
+- CNRFC_daily_ensemble/ # folder of CSV files of daily-released ensemble forecasts (converted into daily values) retrieved from California Nevada River Forecast Center (CNRFC)
+- Folsom_observed_operations.csv/ # Observed inflow, release, storage, and PDSI time series for WYs 1990-2024 
+- Box_Cox_trans_lambda.csv/ # Calibrated lambda value applied in the Box-Cox transformation (required in implementing BMA model)
+- BMA_paras_7day_horizon.csv/ # Calibrated BMA model parameters (based on WYs 2015-2019) for the forecast horizon of 7 days (calibrated using R package 'ensembleBMA' externally)
+- EFO_risk_tolerance_curve.csv/ # risk-tolerance curve (specific risk tolerance levels for each day within 15 days) for EFO implemtation
+- Modified_rule_curve.csv/ # modified storage regulation curve associated with the experiment settings (only used in multi-year operation simulations)
+
+### `utils`
+Source code for model components
+- `bma_module.py` # Bayesian Model Averaging implementation
+- `dflwl_model.py` # dFLWL model for optimal hedging rules
+- `efo_module.py` # EFO model for risk tolerance-based flood control release
+- `gdrom_folsom.py- # pre-trained GDROM rules for Folsom Lake
+
+`dFLWL-EFO_demo_flood_season.ipynb` # Walk-through example for model setting and dFLWL-EFO implementation for flood season operations (e.g., WY 2017)
+`multi-year_simulation_demo.ipynb` # Multi-year simulation demo for WYs 2016–2019 using dFLWL-EFO + GDROM
+
+`README.md` # Project description and setup guide
+`LICENSE` # License file 
 
 ## How to Run the dFLWL-EFO for Your Reservoir
 
