@@ -2,7 +2,7 @@
 
 This repository supports the manuscript **Balancing Water Supply and Flood Risk for FIRO by Combining Optimal Hedging and Risk Tolerance-Based Operating Rules**, currently under revision for submission to *Journal of Water Resources Planning and Management*.
 
-This repository contains the source code, datasets, and documentation for implementing the **dFLWL-EFO** framework, developed to enhance real-time Forecast-Informed Reservoir Operations (FIRO) by integrating optimal hedging policies and risk-tolerance based flood control rules. As a generalizable decision-support tool, dFLWL-EFO allows users to apply the framework to various reservoirs. Users can follow the demonstration example of **Folsom Lake** (California) to prepare input data, define parameters and run model simulations. More information of the framework should be referred to the munuscript.
+This repository contains the source code, datasets, and documentation for implementing the **dFLWL-EFO** framework, developed to enhance real-time Forecast-Informed Reservoir Operations (FIRO) in flood season by integrating optimal hedging policies and risk-tolerance based flood control rules. As a generalizable decision-support tool, dFLWL-EFO allows users to apply the framework to various reservoirs. Users can follow the demonstration example of **Folsom Lake** (California) to prepare input data, define parameters and run model simulations. More information of the framework should be referred to the munuscript.
 
 ## Repository Structure
 
@@ -49,7 +49,7 @@ Notably, we use the Generic Data-Driven Reservoir Operation Model (GDROM) (Chen 
 
 ### Step 2: Configure Model Parameters
 
-Key model parameters include those related to real-world release and storage constraints, FIRO policy settings, and model-specific configurations (i.e., the dFLWL model parameters (ω,m,r_a)). The notebook `dFLWL-EFO_demo_flood_season.ipynb` walks through parameter configuration and constraint setting for Folsom Lake. Users should follow this structure to customize settings for a different reservoir.
+Key model parameters include those related to real-world release and storage constraints, FIRO policy settings, and model-specific configurations (i.e., the dFLWL model parameters ω, m, $r_a$). The notebook `dFLWL-EFO_demo_flood_season.ipynb` walks through parameter configuration and constraint setting for Folsom Lake. Users should follow this structure to customize settings for a different reservoir.
 
 
 ### Step 3: Run the model
@@ -58,7 +58,7 @@ This repository includes all scripts and datasets required to replicate the Fols
 To run the model:
 1. Open and execute the notebook `dFLWL-EFO_demo_flood_season.ipynb`, which demonstrates FIRO decision support using dFLWL-EFO during the major flood season of WY 2017. This replicates **Figure 6** in the manuscript.
 2. Modify the input paths and parameters in the notebook to run dFLWL-EFO for your reservoir.
-3. Core functions are modularized and stored in the `utils/` directory. Ensure this folder is present when executing notebooks.
+3. Core functions are modularized and stored in the `utils` directory. Ensure this folder is present when executing notebooks.
 
 ### Optional: Multi-year simulation
 
