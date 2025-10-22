@@ -23,8 +23,8 @@ Source code for model components
 - `gdrom_folsom.py`: pre-trained GDROM rules for Folsom Lake
 
 ### `notebooks`
-`dFLWL-EFO_demo_flood_season.ipynb`: Walk-through example for model setting and dFLWL-EFO implementation for flood season operations (e.g., WY 2017)
-`multi-year_simulation_demo.ipynb`: Multi-year simulation demo for WYs 2016–2019 using dFLWL-EFO + GDROM
+- `dFLWL-EFO_demo_flood_season.ipynb`: Walk-through example for model setting and dFLWL-EFO implementation for flood season operations (e.g., WY 2017)
+- `multi-year_simulation_demo.ipynb`: Multi-year simulation demo for WYs 2016–2019 using dFLWL-EFO + GDROM
 
 
 `README.md`: Project description and setup guide
@@ -39,10 +39,10 @@ This section provides a step-by-step guide to applying the dFLWL-EFO framework t
 ### Step 1: Prepare input data
 
 To run the model, the following datasets must be prepared:
-* Ensemble forecast inflows: Raw, daily-updated ensemble forecasts (separate files for each day, consistantly with the format used by the CNRFC)
-* Long-term historical reservoir operation series: Observed inflow series are required to estimate the Box-Cox transformation parameter ($\lambda$), which is used in Bayesian Model Averaging (BMA). Observed release series are needed to derive downstream flood conveyance capacity ($R_{2,max}$, used in dFLWL component). 
+* Ensemble forecast inflows: Raw, daily-updated ensemble forecasts (separate files for each day)
+* Long-term historical reservoir operation series: Observed inflow series are required to estimate the Box-Cox transformation parameter ($\lambda$), which is used in Bayesian Model Averaging (BMA). Observed release series are needed to derive downstream flood conveyance capacity ($R_{2,max}$, used in dFLWL). 
 * Calibrated parameters of BMA model: `utils/bma_module.py` requires pre-calibrated parameters including ensemble member weights and standard deviations for the selected forecast horizon. For Folsom Lake, those parameters are calibrated using the R package 'ensembleBMA' externally.
-* Risk tolerance curve for EFO implementation: The risk-tolerance curve defines risk tolerance levels for each day within a 15-day horizon. Users can refer to methods from Delaney et al. (2020) and Taylor et al. (2025) to derive these curves for their specific reservoirs.
+* Risk tolerance curve for EFO implementation: The risk-tolerance curve defines risk tolerance levels for each day within a 15-day horizon. Users can refer to methods from Delaney et al. (2020) and Taylor et al. (2024) to derive these curves for their specific reservoirs.
 
 Notably, we use the Generic Data-Driven Reservoir Operation Model (GDROM) (Chen et al., 2022) to approximate daily minimum required release $R_{1,min}$ for meeting water demand. GDROM captures real-world operation rules from historical data through deriving a set of representative operation modules tailored to varying hydroclimatic conditions, based on daily inputs of inflow, initial storage, the day of year (DOY), and Palmer Drought Severity Index (PDSI). For Folsom Lake, GDROM-derived rules are implemented in `utils/gdrom_folsom.py`. For other reservoirs, For other reservoirs, users can either provide GDROM-derived rule sets, use outputs from another reservoir simulation model, or directly supply $R_{1,min}$ time series if available.
 
@@ -62,7 +62,7 @@ To run the model:
 
 ### Optional: Multi-year simulation
 
-To simulate reservoir operations over multiple years, use `multi-year_simulation_demo.ipynb`. This notebook couples dFLWL-EFO with GDROM to simulate reservoir behavior over WYs 2016–2019 for Folsom Lake. It replicates a portion of Figure 8 in the manuscript and can be adapted to simulate other reservoirs over user-specified periods.
+To simulate reservoir operations over multiple years, use `multi-year_simulation_demo.ipynb`. This notebook couples dFLWL-EFO with GDROM to simulate reservoir behavior over WYs 2016–2019 for Folsom Lake. It replicates a portion of **Figure 8** in the manuscript and can be adapted to simulate other reservoirs over user-specified periods.
 
 ## License
 This project is licensed under the MIT License.
