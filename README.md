@@ -8,7 +8,7 @@ This repository contains the source code, datasets, and documentation for implem
 
 ### `data`
 Processed input data for Folsom Lake:
-- CNRFC_daily_ensemble: folder of CSV files of daily-released ensemble forecasts (converted into daily values) retrieved from California Nevada River Forecast Center (CNRFC)
+- CNRFC_daily_ensemble.rar: zip folder of CSV files of daily-released ensemble forecasts (from 2015-10-01 to 2019-06-30, converted into daily values) retrieved from California Nevada River Forecast Center (CNRFC)
 - Folsom_observed_operations.csv: Observed inflow, release, storage, and PDSI time series for WYs 1990-2024 
 - Box_Cox_trans_lambda.csv: Calibrated lambda value applied in the Box-Cox transformation (required in implementing BMA model)
 - BMA_paras_7day_horizon.csv: Calibrated BMA model parameters (based on WYs 2015-2019) for the forecast horizon of 7 days (calibrated using R package 'ensembleBMA' externally)
